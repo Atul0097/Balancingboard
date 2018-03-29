@@ -2,6 +2,7 @@ import sys
 import glob
 import serial
 
+
 def serial_ports():
     """ Lists serial port names
 
@@ -32,14 +33,15 @@ def serial_ports():
 
 if __name__ == '__main__':
 
-    rep=""
-    ports=serial_ports()
+
+    rep = ""
+    ports = serial_ports()
     print(ports)
     print()
     while rep not in ports:
         rep = input('  Enter a COM port (eg COM1) and press enter:  ')
 
-    ser = serial.Serial(rep, 115200, bytesize = serial.EIGHTBITS , timeout=None, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE)
+    ser = serial.Serial(rep, 115200, bytesize=serial.EIGHTBITS , timeout=None, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE)
     print()
     port2 = serial_ports()
     print(port2)
